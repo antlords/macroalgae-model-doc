@@ -5,7 +5,7 @@ This section describes the routine **p4zpocmac.F90** the computation of the degr
 ---
 ### Overview
 
-At each time step, the degradation of `POCMAC` is computed based on the local seawater temperature. A proportion of the labile fraction (95%) of detrital macroalgae carbon is remineralized into DOC. The rate is calculated and applied to the tracer arrays, ensuring mass conservation in the organic matter cycle.
+At each time step, the degradation of `POCMAC` is computed based on the local seawater temperature. A proportion of the labile fraction (90%) of detrital macroalgae carbon is remineralized into DOC. The rate is calculated and applied to the tracer arrays, ensuring mass conservation in the organic matter cycle.
 
 ---
 ### Equation
@@ -16,18 +16,18 @@ $$
 R_{remin,ijk} = (0.054 × T_ijk + 0.3605) × Δt
 $$
 $$
-\frac{dPOCMAC}{dt} = - 0.95 × Remin_rate × POCMAC
+\frac{dPOCMAC}{dt} = - 0.90 × Remin_rate × POCMAC
 $$
 
 $$
-\frac{dDOCMAC}{dt} = + 0.95 × Remin_rate × POCMAC
+\frac{dDOCMAC}{dt} = + 0.90 × Remin_rate × POCMAC
 $$
 
 
 Where:
 
-- Only 95% of `POCMAC` is considered labile and degradable,
-- The remaining 5% is refractory and assumed not to remineralize on model timescales.
+- Only 90% of `POCMAC` is considered labile and degradable,
+- The remaining 10% is refractory and assumed not to remineralize on model timescales.
 
 ---
 
@@ -50,6 +50,5 @@ The routine outputs a 3D diagnostic field `xdegradpoc`, which represents the deg
 ---
 
 ### Reference 
-
-Filbee-Dexter, K., Pessarrodona, A., Pedersen, M.F. et al. Carbon export from seaweed forests to deep ocean sinks. Nat. Geosci. 17, 552–559 (2024). https://doi.org/10.1038/s41561-024-01449-7
+Filbee-Dexter, Karen, Colette J. Feehan, Dan A. Smale, et al. ‘Kelp Carbon Sink Potential Decreases with Warming Due to Accelerating Decomposition’. PLoS Biology 20, no. 8 (2022): e3001702.
 
