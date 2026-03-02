@@ -21,7 +21,7 @@ For each 3D ocean grid cell where there is a macroalgae initial seed (`macrogebc
 The temperature growth limitation is given by a Gaussian function, following Wu et al (2023):
 
 $$
-f_T = \exp\left(-2.4 \left(\frac{T - T_{\text{opt}}}{T_x - T_{\text{opt}}}\right)^2 \right)
+f_T = \exp\left(-2.3 \left(\frac{T - T_{\text{opt}}}{T_x - T_{\text{opt}}}\right)^2 \right)
 $$
 
 Where:
